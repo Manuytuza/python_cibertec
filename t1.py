@@ -1,39 +1,83 @@
-""""
-import random
+# TIPOS DE FOR EN PYTHON + EJEMPLOS
 
-secret_num = random.randint(1,10)
-point = 9
+# 1. FOR DIRECTO (recorre elementos)
+numeros = [1, 2, 3, 4]
 
-print("Adivina un número del 1 al 10")
-print("Tienes 5 intentos y incias con 9 point")
-print("Cada error resta 2 y ganar suma 10")
-print("Gana >= 10 point")
-print("Muere el que quede sin puntos")
+print("FOR directo:")
+for num in numeros:
+    print(num)
 
+# 2. FOR CON ÍNDICE (range + len)
+# Recorre usando posiciones (índices)
+numeros = [10, 20, 30]
+
+print("\nFOR con índice:")
+for i in range(len(numeros)):
+    print("Posición:", i, "Valor:", numeros[i])
+
+# 3. FOR CON RANGE (contador)
+# Sirve para repetir algo varias veces
+
+print("\nFOR con range (contador):")
 for i in range(5):
-  print()
-  user_num = int(input("ingresa el numero: "))
-  if user_num == secret_num:
-    point = point + 10
-    print("intento",i+1,": acertaste","tu vida es",point)
-    print("Ganaste")
-    break
-  elif user_num < secret_num:
-    
-    point = point -2
-    print("intento",i+1,": te equivocaste tu vida es",point)
-    print("pista: el numero es mayor")
+    print(i)
 
-  else:
-    point = point -2
-    print("intento",i+1,": te equivocaste tu vida es",point)
-    print("pist: el numero es menor")
+# Variaciones de range
+print("\nVariaciones de range:")
+for i in range(2, 6):  # desde 2 hasta 5
+    print(i)
 
-  if point < 1 :
-    print("morirste")
-    break
+for i in range(0, 10, 2):  # de 2 en 2
+    print(i)
 
-print("el numero es:", secret_num)
-    
-"""
-# Imprime una "flecha" de asteriscos que sube hasta 6 y luego baja
+# 4. FOR CON ENUMERATE (índice + valor)
+# Forma más profesional de obtener índice y valor
+
+numeros = [5, 9, 12]
+
+print("\nFOR con enumerate:")
+for i, num in enumerate(numeros):
+    print("Posición:", i, "Valor:", num)
+
+# 5. FOR EN FICHEROS (archivos)
+# Lee un archivo línea por línea
+# NOTA: Asegúrate de tener un archivo llamado "datos.txt"
+
+print("\nFOR en fichero:")
+try:
+    with open("datos.txt", "r") as archivo:
+        for linea in archivo:
+            print(linea.strip())  # .strip() quita saltos de línea
+except FileNotFoundError:
+    print("No se encontró el archivo 'datos.txt'")
+
+# RESUMEN 
+# - FOR directo → recorre elementos
+# - FOR con índice → usa posiciones
+# - FOR con range → funciona como contador
+# - FOR con enumerate → índice + valor
+# - FOR en fichero → recorre líneas de archivo
+
+
+
+#Participacion: buscar un ejercicio del for para un array, vector, fichero 
+# lista (array)
+numeros = [10, 20, 30, 40]
+
+print("array:")
+for num in numeros:
+    print(num)
+
+# vector (con índice)
+print("\nvector:")
+for i in range(len(numeros)):
+    print(i, numeros[i])
+
+# fichero (archivo)
+print("\nfichero:")
+
+with open("datos.txt", "r") as archivo:
+   for linea in archivo:
+      print(linea.strip())
+
+

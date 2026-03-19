@@ -1,0 +1,5 @@
+Linea 1: Hola mundo
+Linea 2: Aprendiendo Python
+Linea 3: Uso del for en ficheros
+Linea 4: Fin del archivo
+
