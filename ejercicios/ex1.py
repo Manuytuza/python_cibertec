@@ -1,7 +1,7 @@
 #ejemplo compañero 1
 amigas = ["MaryCarmen", "Estefania", "Lesly", "Carina"]
 busqueda=input("Ingrese un nombre: ")
-existe=False
+existe=False 
 for nombre in amigas:
   if nombre == busqueda:
     existe=True
