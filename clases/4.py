@@ -1,5 +1,5 @@
-#subir tarea a visual antes de siguiente clase 
-#revisar ejericios del dia martes PDF
+#subir tarea a visual antes de siguiente clase = listo
+#revisar ejericios del dia martes PDF = falta
 
 def calcu_2(n1,n2,oper_name):
     match oper_name:
@@ -113,7 +113,9 @@ print(a1_set  | a2_set)
 #split(): devuelve un lista con la cadena de caracteres por cada indice de la lista, corta
 cad = "manuel ytuza cusirramos"
 cad.split()
-cad.split("a") #corta cuando encuentra la "a"
+
+print()
+print(cad.split("a")) #corta cuando encuentra la "a"
 
 #devuelve una cadena de carteres convertido a lo opuesto sea MAY o MIN
 cad2 = "Luis lopez"
@@ -125,6 +127,12 @@ print(a1_dict["one"])
 
 print(a1_dict.keys()) #muestra identificadores
 print(a1_dict.values()) # muestra valores
+
+
+#fin de secion de tarde   
+
+#-------------------------------------------------------------------------------------------------
+
 
 #asignar valores
 a1_dict["four"] = 4
