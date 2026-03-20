@@ -78,3 +78,154 @@ Sirve para entrar a una carpeta.
 🔹 cd ..
 Sirve para regresar a la carpeta anterior.
 
+#match similar a switch
+
+def calcu_2(n1,n2,oper_name):
+    match oper_name:
+      case "suma":
+        return n1+n2
+      case "resta":
+        return n1-n2
+      case "multiplicacion":
+        return n1*n2
+      case "division" if n2 != 0:
+        return n1/n2
+      case "division": #aqui n2 entendemos que es 0
+        return "no se puede div entre 0"
+      case _: #similar a else
+        return "operacion invalid"
+
+#------------------------------------------------------------------------
+# LISTAS EN PYTHON - RESUMEN RÁPIDO
+
+lista = [1, 2, 3]
+
+# Agregar elementos
+lista.append(4)        # agrega al final
+lista.insert(1, 100)   # agrega en posición específica
+
+# Eliminar elementos
+lista.remove(100)      # elimina por valor
+lista.pop()            # elimina último elemento
+lista.pop(0)           # elimina por índice
+
+# Ordenar y modificar
+lista.sort()           # ordena de menor a mayor
+lista.reverse()        # invierte la lista
+
+# Información de la lista
+len(lista)             # cantidad de elementos
+lista.count(2)         # cuántas veces aparece un valor
+lista.index(3)         # posición de un valor
+
+# Acceso a elementos
+lista[0]               # primer elemento
+lista[-1]              # último elemento
+
+# Verificar si existe un valor
+2 in lista             # True o False
+#--------------------------------------------------------------------
+
+#li[inicio:fin:paso]
+#li[inicio:fin:paso]
+#inicio -> desde donde empieza
+#fin -> hasta donde(NO INCLUYE ESE INDICE)
+#paso o salta -> cada cuanto avanza
+
+li =[1,2,4,5]
+print(li[1:3]) #2,4
+print(li[:2]) #empieza desde 0, omite poner comienzo
+print(li[:: 2]) #de dos en dos y agarro toda la lista , siempre imprime el 1ro y salta lo que dice
+
+print(li[::-1]) #invierte la lista 
+
+#------SET Y X.INTERSECTION(X2)
+list1 = [1,2,3,4]
+list2 = [5,3,7,9]
+s1 = set(list1) #PROBAR QUITAR
+s2 = set(list2)
+
+ans = s1 & s2
+print(ans)
+
+print(s1.intersection(s2))
+
+# ================================
+# FUNCIONES DE STRINGS EN PYTHON
+# ================================
+
+# 🔹 split() → divide un texto en partes (lista)
+texto = "hola mundo python"
+resultado = texto.split()  
+# ['hola', 'mundo', 'python']
+
+texto2 = "manzana,pera,uva"
+resultado2 = texto2.split(",")  
+# ['manzana', 'pera', 'uva']
+
+
+# 🔹 lower() → convierte a minúsculas
+texto = "HOLA MUNDO"
+resultado = texto.lower()  
+# "hola mundo"
+
+
+# 🔹 upper() → convierte a mayúsculas
+texto = "hola mundo"
+resultado = texto.upper()  
+# "HOLA MUNDO"
+
+
+# 🔹 strip() → elimina espacios al inicio y final
+texto = "   hola mundo   "
+resultado = texto.strip()  
+# "hola mundo"
+
+
+# 🔹 replace() → reemplaza texto
+texto = "hola mundo"
+resultado = texto.replace("hola", "adios")  
+# "adios mundo"
+
+
+# 🔹 find() → busca y devuelve la posición
+texto = "hola mundo"
+resultado = texto.find("mundo")  
+# 5
+
+# si no encuentra devuelve -1
+resultado = texto.find("python")  
+# -1
+
+
+# 🔹 count() → cuenta cuántas veces aparece algo
+texto = "hola hola hola"
+resultado = texto.count("hola")  
+# 3
+
+
+# ================================
+# ⚠️ IMPORTANTE
+# ================================
+
+# Estas funciones NO cambian el texto original
+texto = "HOLA"
+texto.lower()
+
+print(texto)  
+# "HOLA" (no cambió)
+
+# ✔ forma correcta
+texto = texto.lower()
+print(texto)  
+# "hola"
+
+##---------------------DICIONARIOS
+a1_dict= {"one":1, "two":2, "three":3} #"one"==identificado, "1"==valor
+print(a1_dict["one"])
+
+print(a1_dict.keys()) #muestra identificadores
+print(a1_dict.values()) # muestra valores
+
+#asignar valores
+a1_dict["four"] = 4
