@@ -20,6 +20,8 @@ VARIABLE: ES UNA PLABRA QUE GUARDA UN VALOR Y DICHO VALOR PUEDE SER CAMBIADO EN 
 
 #ejercicio #1
 
+valor = 10
+i = 2 
 while (i <= valor): #similar a rango
     k = 0 #bandera 0=primo, 1= no primo
     j = 2 #numero con el que se puede dividir
@@ -75,3 +77,4 @@ Sirve para entrar a una carpeta.
 
 🔹 cd ..
 Sirve para regresar a la carpeta anterior.
+
