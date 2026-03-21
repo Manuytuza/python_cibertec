@@ -221,7 +221,7 @@ print(texto)
 # "hola"
 
 ##---------------------DICIONARIOS
-a1_dict= {"one":1, "two":2, "three":3} #"one"==identificado, "1"==valor
+a1_dict= {"one":1, "two":2, "three":3} #"one"==identificado==KEYS, "1"==valor==VALUES
 print(a1_dict["one"])
 
 print(a1_dict.keys()) #muestra identificadores
