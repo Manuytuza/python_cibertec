@@ -173,11 +173,10 @@ with open("birthday.csv", "r") as archivo_csv:
 
 #que es un DATA FREIN,  df
 try: 
-    with open("example.txt", "x", encoding= "utf-8") as crear: 
+    with open("example2.txt", "x", encoding= "utf-8") as crear: 
         crear.write("Primer registro\n") 
 except FileExistsError:
    print("el archivo ya se creo seguimos")
-   pass
 
 dic_ventas = {
    "macbook": 600,
@@ -185,11 +184,16 @@ dic_ventas = {
    "iphone_17e":400
 }
   
-with open("example.txt", "a", encoding="utf-8") as f:
+with open("example2.txt", "a", encoding="utf-8") as f:
     for item,key in dic_ventas.items():
       f.write(f"el producto {item} cuesta {key}\n")
 
-with open("example.txt", "r", encoding="utf-8") as reader:
+
+with open("example2.txt", "a", encoding="utf-8") as f:
+   for lin in range(5):
+      f.write(f"linea {lin}\n")
+      print()
+
+with open("example2.txt", "r", encoding="utf-8") as reader:
     for linea in reader:
-       print(linea)
-     
+       print(linea, end="")

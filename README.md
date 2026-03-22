@@ -1,7 +1,19 @@
-#funcion isinstance(valor, tipo) es una función que verifica el tipo de dato.
+README PYTHON-CYBERTEC
 
-def aproub_reproub (nota):
-   if not isinstance( nota , (int,float)) :
+1.#funcion isinstance(valor, tipo) es una función que verifica el tipo de dato.
+  if isinstance(n, (float,int))
+
+x ="str"
+y = 1
+def int_detect(x):
+    if isinstance(x, (float,int)): 
+        print("es float o int")
+    else:
+        print("no lo es")
+
+int_detect(x)
+int_detect(y)
+
 
 # cuadro comparativo tipos de estructuras
 
@@ -11,6 +23,14 @@ def aproub_reproub (nota):
 | **Tupla (tuple)**      | `( )`            | Sí    | No          | Sí          | datos fijos             |
 | **Set (conjunto)**     | `{ }`            | No    | Sí          | No          | eliminar duplicados     |
 | **Diccionario (dict)** | `{ clave:valor } | Sí    | Sí          | clave única | datos tipo registro     |
+
+| Tipo        | Mutable | Repetidos     | Acceso   |
+| ----------- | ------- | ------------- | -------- |
+| Tupla       | ❌       | ✔             | índice   |
+| Lista       | ✔       | ✔             | índice   |
+| Set         | ✔       | ❌             | no tiene |
+| Diccionario | ✔       | claves únicas | clave    |
+
 
 #concepto de variable 
 
@@ -150,6 +170,12 @@ print(ans)
 
 print(s1.intersection(s2))
 
+
+# fin de transcripcion del repaso 21/03
+
+
+
+
 # ================================
 # FUNCIONES DE STRINGS EN PYTHON
 # ================================
@@ -229,3 +255,20 @@ print(a1_dict.values()) # muestra valores
 
 #asignar valores
 a1_dict["four"] = 4
+
+#leer txt y csv
+
+try: 
+    with open("example2.txt", "x", encoding= "utf-8") as crear: 
+        crear.write("Primer registro\n") 
+except FileExistsError:
+   print("el archivo ya se creo seguimos")
+
+with open("example2.txt", "a", encoding="utf-8") as f:
+   for lin in range(5):
+      f.write(f"linea {lin}\n")
+      print()
+
+with open("example2.txt", "r", encoding="utf-8") as reader:
+    for linea in reader:
+       print(linea, end="")
