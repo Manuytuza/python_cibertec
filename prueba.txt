@@ -1,0 +1,6 @@
+first line of the txt 
+linea numero 0 of new txt create 
+linea numero 1 of new txt create 
+linea numero 2 of new txt create 
+linea numero 3 of new txt create 
+linea numero 4 of new txt create 

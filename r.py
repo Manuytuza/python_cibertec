@@ -109,3 +109,47 @@ else:
     print(calculadora(n1,n2,operation))
 finally:
     print("fin")
+
+#resumen 23/03
+#7 funciones de string 
+var_lower = "MAYUSCULA".lower() #print("maysucula"), vuelve minuscula
+var_strip = "  hola  ".strip() #print("hola"), sin espacios
+var_find = "dany,alice manu"
+resultado =var_find.find("manu") #devulve indice de encontrarlo y -1 si no
+print(resultado)
+
+#8 diccionario y funciones
+dic_exam = {
+    "nombre": "Manuel",
+    "edad": 30,
+    "nacionalidad": "peruana",
+    "trabajo": "developer",
+    "dreams": "helicopters"
+}
+dic_num ={
+    "manuel": 30,
+    "dany": 37,
+    "alice":5,
+    "emile": 13
+}
+
+print(dic_exam.keys()) #keys del diccionario
+sum_dic = dic_num.values() #valores de cada key del dicionario
+print(sum_dic)
+print(sum(sum_dic)) #suma de los valores
+print(dic_num.items()) #imprime keys + values del dic
+
+#9 open csv and txt
+try:
+    with open("prueba.txt", "x", encoding="utf-8") as x:
+        x.write("first line of the txt \n")
+except Exception as e:
+    print("archivo creado", e)
+
+with open("prueba.txt", "a", encoding="utf-8") as a:
+    for line in range(5):
+        a.write(f"linea numero {line} of new txt create \n") #solo imprime un grupo para ams usamos f-string y \n crea salto de linea
+
+with open( "prueba.txt", "r", encoding="utf-8") as r:
+    for line in r:
+        print(line, end="") # end="", quita separaciones
