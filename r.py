@@ -117,6 +117,9 @@ var_strip = "  hola  ".strip() #print("hola"), sin espacios
 var_find = "dany,alice manu"
 resultado =var_find.find("manu") #devulve indice de encontrarlo y -1 si no
 print(resultado)
+var_replace= "$ ?Manuel?"
+print(var_replace.replace("$","").replace("?","").lower().strip()) #limpia str por caracter
+print("")
 
 #8 diccionario y funciones
 dic_exam = {
@@ -153,3 +156,51 @@ with open("prueba.txt", "a", encoding="utf-8") as a:
 with open( "prueba.txt", "r", encoding="utf-8") as r:
     for line in r:
         print(line, end="") # end="", quita separaciones
+#10 date 
+"""
+import datetime as dt
+import time
+
+while True:
+    hora = dt.datetime.now().strftime("%H:%M:%S")
+    print(f"\r🕒 Hora actual: {hora}", end="") 
+    #"\r" regresa a al misma linea
+    #end=""evita salto de linea
+    time.sleep(1) #le da un segundo de espera
+"""
+
+#11 limpieza y conteo de palabras 
+texto = 'Buenas tardes, he notado consumos no reconocidos en mi tarjeta de crédito que no he realizado. Mis últimos consumos son del 4 de abril pero en el estado de cuenta de mi tarjeta de crédito aparecen consumos posteriores. Espero su pronta ayuda, abonando el monto de los consumos al saldo de mi tarjeta, gracias.'
+
+# 🔹 1. Limpiar texto
+lista = texto.replace('.', '').replace(',', '').lower().split()
+
+# 🔹 2. Palabras a ignorar (stopwords)
+stopwords = {"de", "la", "el", "en", "y", "que", "a", "los", "del", "mi"}
+
+# 🔹 3. Filtrar palabras útiles
+lista_filtrada = [w for w in lista if w not in stopwords]
+print(lista_filtrada)
+
+# 🔹 4. Contar frecuencia (forma PRO)
+frecuencia = {}
+for w in lista_filtrada:
+    frecuencia[w] = frecuencia.get(w, 0) + 1
+print(frecuencia)
+# 🔹 5. Ordenar de mayor a menor
+ranking = sorted(frecuencia.items(), key=lambda x: x[1], reverse=True)
+
+# 🔹 6. Mostrar resultados
+print("🔢 Cantidad de palabras distintas:", len(frecuencia))
+
+print("\n📊 Ranking de palabras:")
+for palabra, veces in ranking:
+    if veces == 1:
+        print(f"{palabra} → {veces} vez")
+    else:
+        print(f"{palabra} → {veces} veces")
+
+# 🔹 7. TOP 5
+print("\n🔥 TOP 5 palabras más repetidas:")
+for palabra, veces in ranking[:5]:
+    print(f"{palabra} → {veces}")
