@@ -10,7 +10,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 
-df = pd.read_excel('/content/Super_Auto.xlsx', sheet_name='BD')
+df = pd.read_excel('Super_Auto.xlsx', sheet_name='BD')
 
 cat_cols = ['Genero_Propietario', 'Tipo_vehiculo', 'Forma_pago', 'Zona', 'Vendedor',
             'Ubicacion', 'Frecuencia_Pago', 'Nivel_Educativo']
@@ -328,5 +328,5 @@ plt.show()
 
 
 # Exportar el DataFrame limpio a un archivo Excel
-df.to_excel("/content/Super_Auto_LIMPIO.xlsx", index=False)
+df.to_excel("Super_Auto_LIMPIO.xlsx", index=False)
 print("✅ Archivo exportado exitosamente como 'Super_Auto_Optimizado.xlsx'")

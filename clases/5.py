@@ -1,8 +1,5 @@
 #revisar practica resuelta de examen final 
 #PANDAS Y EXCEL
-#REEMPLAZA NULOS CON PROMEDIOS
-#FILTRAR DATOS 
-#CRUCES
 
 #QUE ES UN RPA
 ###proxima clase lean el codigo python de superauto data frein revisar########
@@ -18,6 +15,7 @@ def calcular_impuesto(ingreso_anual):
     UIT = 4400
     # Paso 1: restar 7 UIT
     renta_neta = ingreso_anual - (7 * UIT)
+    print(renta_neta)
     if renta_neta <= 0:
         return 0
     impuesto = 0  # aquí se irá acumulando todo lo que se paga
@@ -66,3 +64,52 @@ print("El impuesto a pagar es:", resultado)
 ###cambiar ruta de superauto
 ###enrutar
 ### martes 7 examen final 
+
+def calcular_impuesto(ingreso_anual):
+    UIT = 4400
+    
+    # Paso 1: calcular renta neta
+    renta_neta = ingreso_anual - (7 * UIT)
+
+    # Si no paga impuesto
+    if renta_neta <= 0:
+        return 0
+
+    impuesto = 0
+
+    # Tramos: (límite, tasa)
+    tramos = [
+        (5 * UIT, 0.08),
+        (15 * UIT, 0.14),
+        (15 * UIT, 0.17),
+        (10 * UIT, 0.20),
+        (float("inf"), 0.30)
+    ]
+
+    acumulado = 0
+
+    # Cálculo del impuesto
+    for limite, tasa in tramos:
+        if renta_neta > acumulado:
+            tramo = min(renta_neta - acumulado, limite)
+            impuesto += tramo * tasa
+            print(f"impuesto de tramo, {impuesto} y acumulado {acumulado}")
+            acumulado += limite 
+        else:
+            break
+
+    return impuesto
+
+
+# =========================
+# PROGRAMA PRINCIPAL
+# =========================
+
+# Pedir ingreso al usuario
+ingreso = float(input("Ingrese su ingreso anual: "))
+
+# Calcular impuesto
+resultado = calcular_impuesto(ingreso)
+
+# Mostrar resultado
+print(f"El impuesto a pagar es: S/ {resultado:.2f}")
