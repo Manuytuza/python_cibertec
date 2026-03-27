@@ -64,20 +64,18 @@ print("El impuesto a pagar es:", resultado)
 ###cambiar ruta de superauto
 ###enrutar
 ### martes 7 examen final 
-
 def calcular_impuesto(ingreso_anual):
     UIT = 4400
-    
-    # Paso 1: calcular renta neta
+
+    # Calcular renta neta
     renta_neta = ingreso_anual - (7 * UIT)
 
-    # Si no paga impuesto
     if renta_neta <= 0:
         return 0
 
     impuesto = 0
 
-    # Tramos: (límite, tasa)
+    # (límite del tramo, tasa)
     tramos = [
         (5 * UIT, 0.08),
         (15 * UIT, 0.14),
@@ -86,17 +84,15 @@ def calcular_impuesto(ingreso_anual):
         (float("inf"), 0.30)
     ]
 
-    acumulado = 0
+    restante = renta_neta  # lo que falta por calcular
 
-    # Cálculo del impuesto
     for limite, tasa in tramos:
-        if renta_neta > acumulado:
-            tramo = min(renta_neta - acumulado, limite)
-            impuesto += tramo * tasa
-            print(f"impuesto de tramo, {impuesto} y acumulado {acumulado}")
-            acumulado += limite 
-        else:
+        if restante <= 0:
             break
+
+        monto_tramo = min(restante, limite)
+        impuesto += monto_tramo * tasa
+        restante -= monto_tramo
 
     return impuesto
 
@@ -105,11 +101,11 @@ def calcular_impuesto(ingreso_anual):
 # PROGRAMA PRINCIPAL
 # =========================
 
-# Pedir ingreso al usuario
-ingreso = float(input("Ingrese su ingreso anual: "))
+def main():
+    ingreso = float(input("Ingrese su ingreso anual: "))
+    impuesto = calcular_impuesto(ingreso)
+    print(f"Impuesto a pagar: S/ {impuesto:.2f}")
 
-# Calcular impuesto
-resultado = calcular_impuesto(ingreso)
 
-# Mostrar resultado
-print(f"El impuesto a pagar es: S/ {resultado:.2f}")
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,6 @@
+Name,Score,Attempts,Qualify,Score_x_Attempts
+Anastasia,12.5,1,yes,12.5
+Dima,9.0,3,no,27.0
+Katherine,16.5,2,yes,33.0
+James,,3,no,
+Emily,9.0,2,no,18.0
