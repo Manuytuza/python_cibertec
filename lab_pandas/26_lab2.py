@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1J5yHIJEAO4nh-tCAdwH7zzV0b8ZWTnqT
 """
 
-import pandas as pd
+import pandas as pd 
 
 peru_df = pd.read_excel('peru_df.xlsx')
 #peru_df = peru_df.set_index('dep')
