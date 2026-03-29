@@ -54,7 +54,7 @@ print(v1)
 
 v1l=v1.replace("$","").lower().strip()#nose guarda automatico #lower()vuelve minuscula #strip()quita espacios
 print(v1l)
-"""
+
 #----------
 import pandas as pd 
 
@@ -189,4 +189,21 @@ try:
     print("secreo panda_mediano.csv")
 except Exception as e:
     print(f"error al crear csv {e}")
+"""
+#seguimos 29/03
+import pandas as pd
+import random
 
+df =pd.read_csv("panda_mediano.csv",  index_col=False)
+print(df.axes) #.axes permite ver filas y nombres de columnas
+df.sort_values(by=["Name"], ascending=True, inplace=True)
+print(df)
+
+#eliminar columna , axis=1 columnas y 0 filas
+df = df.drop(["Unnamed: 0"], axis= 1)
+df = df.drop([4], axis= 0)
+#aumentar una columna random
+df["new_column"]=[random.randint(1,100) for _ in range(len(df))]
+print(df)
+
+ 
