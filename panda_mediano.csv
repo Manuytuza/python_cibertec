@@ -1,0 +1,6 @@
+,Name,Score,Attempts,Qualify,brain
+0,Anastasia,replace,primo,yes,0
+1,Dima,replace2,three,no,1
+2,Katherine,33.0,second,yes,2
+3,James,fillna -nanfillna -nan,three,no,3
+4,Emily,replace2,second,no,4
