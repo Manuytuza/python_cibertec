@@ -24,7 +24,7 @@ print(l4)
 l1.pop(6)#pars que fucnion el for-if, ya que str genera TypeError
 l5= [x**2 for x in l1 if x >= 4]
 print(l5)
-#--------------
+#-------------- 
 def calculator(x,y,operation):
     match operation:
         case "+":
@@ -196,14 +196,28 @@ import random
 
 df =pd.read_csv("panda_mediano.csv",  index_col=False)
 print(df.axes) #.axes permite ver filas y nombres de columnas
-df.sort_values(by=["Name"], ascending=True, inplace=True)
+
+df.sort_values(by=["Name"], inplace=True) 
+#ascending=True, ya esta por defecto
 print(df)
 
 #eliminar columna , axis=1 columnas y 0 filas
 df = df.drop(["Unnamed: 0"], axis= 1)
 df = df.drop([4], axis= 0)
+
 #aumentar una columna random
 df["new_column"]=[random.randint(1,100) for _ in range(len(df))]
 print(df)
 
- 
+#usar funcion mas .apply(def)
+def cambio(x):
+    if x == "replace":
+        return 1
+    elif x == "replace2":
+        return 2
+    else:
+        return x
+
+df["Score"] = df["Score"].apply(cambio)
+print(df["Score"]) 
+
