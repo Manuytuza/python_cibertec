@@ -1,0 +1,7 @@
+Empresa: TechStore
+Año: 2026
+Productos únicos:
+Audifonos
+iPhone
+MacBook
+iPad
