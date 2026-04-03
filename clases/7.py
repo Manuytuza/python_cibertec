@@ -12,11 +12,20 @@ import pandas as pd
 df = pd.DataFrame(
     {
         "mes": ["ene","feb", "mar","abr","may", "jun"],
-        "ventas": [100, 150, 120, 130, 170, 160]
+        "ventas": [100, 150, 120, 130, 170, 160],
+        "unidades": [5,6,7,8,9,9]
     }
 )
 print(df)   
 
+plt.plot(df["mes"], df["ventas"], label="ventas")
+plt.plot(df["mes"], df["unidades"], label="unidades")
+plt.title("mi primer plt")
+plt.xlabel("nombre ejex")
+plt.ylabel("nombre ejey")
+plt.legend()
+plt.show()
+"""
 #seaborn es una libreria de graficos que se basa en matplotlib pero con mejores estilos y mas facil de usar
 sns.set_style("whitegrid") #estilo de fondo colorado
 plt.figure(figsize=(10,6)) #tamaño del grafico 10 ancho y 6 alto
@@ -54,3 +63,5 @@ plt.gca().spines["bottom"].set_visible(False) #ocultar borde inferior
 
 
 plt.show() #mostrar el grafico
+
+"""
