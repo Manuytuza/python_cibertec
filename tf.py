@@ -102,25 +102,35 @@ plt.tight_layout()
 plt.show()
 
 """
-#calenadario 2020
 import pandas as pd
-from docx import Document
 
+# =========================
+# crear calendario 2020
+# =========================
 
-# Crear calendario del 2020 (todos los días)
+# generar fechas
 fechas = pd.date_range(start="2020-01-01", end="2020-12-31")
 
-# Crear DataFrame
-df = pd.DataFrame({"Fecha": fechas})
-print(df)
-# Extraer información
-df["Año"] = df["Fecha"].dt.year
-df["Mes"] = df["Fecha"].dt.month
-df["Día"] = df["Fecha"].dt.day
-df["Día_semana"] = df["Fecha"].dt.day_name()   # nombre del día
-df["Semana"] = df["Fecha"].dt.isocalendar().week
+# crear dataframe
+df_calendario = pd.DataFrame({
+    "Date": fechas,
+    "Day_of_week": fechas.day_name(),
+    "Week_number": fechas.isocalendar().week,
+    "Month": fechas.month_name(),
+    "Quarter": fechas.quarter
+})
 
-print(df.tail) 
+# =========================
+# exportar a excel
+# =========================
+
+df_calendario.to_excel("Calendario_2020.xlsx", index=False)
+
+print("excel generado correctamente")
+
+# =========================
+# exportar a word
+# =========================
 
 from docx import Document
 
@@ -128,21 +138,22 @@ from docx import Document
 doc = Document()
 doc.add_heading("Calendario 2020", level=1)
 
-# agregar tabla
+# crear tabla
 tabla = doc.add_table(rows=1, cols=len(df_calendario.columns))
 tabla.style = "Table Grid"
 
-# agregar encabezados
+# encabezados
 hdr_cells = tabla.rows[0].cells
 for i, col in enumerate(df_calendario.columns):
     hdr_cells[i].text = col
 
-# agregar filas de datos
-for index, row in df_calendario.iterrows():
+# datos
+for _, row in df_calendario.iterrows():
     fila = tabla.add_row().cells
     for i, col in enumerate(df_calendario.columns):
         fila[i].text = str(row[col])
 
-# guardar archivo Word
+# guardar word
 doc.save("Calendario_2020.docx")
-print("Archivo Calendario_2020.docx generado correctamente.")
+
+print("word generado correctamente")
