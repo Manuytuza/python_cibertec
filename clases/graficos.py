@@ -181,3 +181,42 @@ plt.tight_layout()
 
 # mostrar dashboard
 plt.show()
+
+import random
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# =========================
+# 1. SIMULAR LANZAMIENTOS
+# =========================
+moneda = [ ]
+
+# 50 lanzamientos
+lanzamientos = [random.choices(moneda) for _ in range(1,51)]
+
+# crear DataFrame
+df = pd.DataFrame({
+    "Resultado": lanzamientos
+})
+
+print(df)
+
+# =========================
+# 2. CONTAR RESULTADOS
+# =========================
+conteo = df["Resultado"].value_counts()
+
+print("\nConteo:")
+print(conteo)
+
+# =========================
+# 3. GRÁFICO DE BARRAS
+# =========================
+conteo.plot(kind="bar", title="Resultados de 50 lanzamientos de moneda")
+
+plt.xlabel("Resultado")
+plt.ylabel("Cantidad")
+plt.xticks(rotation=0)
+
+plt.tight_layout()
+plt.show()

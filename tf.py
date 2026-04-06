@@ -37,15 +37,12 @@ plt.ylabel("Valor")
 plt.xticks(rotation=90)
 plt.legend()
 plt.show()
-"""
+
 #---------------------------------------
 import random
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# =========================
-# 1. SIMULAR LANZAMIENTOS
-# =========================
 moneda = ["Cara", "Sello"]
 
 # 50 lanzamientos
@@ -58,17 +55,13 @@ df = pd.DataFrame({
 
 print(df)
 
-# =========================
-# 2. CONTAR RESULTADOS
-# =========================
+#contar resultados
 conteo = df["Resultado"].value_counts()
 
 print("\nConteo:")
 print(conteo)
 
-# =========================
-# 3. GRÁFICO DE BARRAS
-# =========================
+#crear grafico 
 conteo.plot(kind="bar", title="Resultados de 50 lanzamientos de moneda")
 
 plt.xlabel("Resultado")
@@ -78,7 +71,7 @@ plt.xticks(rotation=0)
 plt.tight_layout()
 plt.show()
 
-#ejercicoo moneda trampoza
+#ejercicoo moneda trampoza ------------------------------------
 
 lanzamientos = random.choices(
     ["Cara", "Sello"],
@@ -108,16 +101,18 @@ plt.title("Resultados de la moneda tramposa")
 plt.tight_layout()
 plt.show()
 
-
+"""
 #calenadario 2020
 import pandas as pd
+from docx import Document
+
 
 # Crear calendario del 2020 (todos los días)
 fechas = pd.date_range(start="2020-01-01", end="2020-12-31")
 
 # Crear DataFrame
 df = pd.DataFrame({"Fecha": fechas})
-
+print(df)
 # Extraer información
 df["Año"] = df["Fecha"].dt.year
 df["Mes"] = df["Fecha"].dt.month
@@ -126,3 +121,28 @@ df["Día_semana"] = df["Fecha"].dt.day_name()   # nombre del día
 df["Semana"] = df["Fecha"].dt.isocalendar().week
 
 print(df.tail) 
+
+from docx import Document
+
+# crear documento
+doc = Document()
+doc.add_heading("Calendario 2020", level=1)
+
+# agregar tabla
+tabla = doc.add_table(rows=1, cols=len(df_calendario.columns))
+tabla.style = "Table Grid"
+
+# agregar encabezados
+hdr_cells = tabla.rows[0].cells
+for i, col in enumerate(df_calendario.columns):
+    hdr_cells[i].text = col
+
+# agregar filas de datos
+for index, row in df_calendario.iterrows():
+    fila = tabla.add_row().cells
+    for i, col in enumerate(df_calendario.columns):
+        fila[i].text = str(row[col])
+
+# guardar archivo Word
+doc.save("Calendario_2020.docx")
+print("Archivo Calendario_2020.docx generado correctamente.")
