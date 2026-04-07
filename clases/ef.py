@@ -124,7 +124,7 @@ try:
     i = 0
     while i < len(df):
         productos_unicos.add(df["producto"][i])
-        i += 1
+        i += 1 
 
     # =========================
     # FILTROS
@@ -190,3 +190,5 @@ try:
 # =========================
 # MANEJO DE ERRORES
 # =========================
+except Exception as e:
+    print(e)
