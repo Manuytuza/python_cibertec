@@ -25,7 +25,7 @@ plt.xlabel("nombre ejex")
 plt.ylabel("nombre ejey")
 plt.legend()
 plt.show()
-"""
+
 #seaborn es una libreria de graficos que se basa en matplotlib pero con mejores estilos y mas facil de usar
 sns.set_style("whitegrid") #estilo de fondo colorado
 plt.figure(figsize=(10,6)) #tamaño del grafico 10 ancho y 6 alto
@@ -64,4 +64,3 @@ plt.gca().spines["bottom"].set_visible(False) #ocultar borde inferior
 
 plt.show() #mostrar el grafico
 
-"""

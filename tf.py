@@ -37,15 +37,12 @@ plt.ylabel("Valor")
 plt.xticks(rotation=90)
 plt.legend()
 plt.show()
-"""
+
 #---------------------------------------
 import random
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# =========================
-# 1. SIMULAR LANZAMIENTOS
-# =========================
 moneda = ["Cara", "Sello"]
 
 # 50 lanzamientos
@@ -58,17 +55,13 @@ df = pd.DataFrame({
 
 print(df)
 
-# =========================
-# 2. CONTAR RESULTADOS
-# =========================
+#contar resultados
 conteo = df["Resultado"].value_counts()
 
 print("\nConteo:")
 print(conteo)
 
-# =========================
-# 3. GRÁFICO DE BARRAS
-# =========================
+#crear grafico 
 conteo.plot(kind="bar", title="Resultados de 50 lanzamientos de moneda")
 
 plt.xlabel("Resultado")
@@ -78,7 +71,7 @@ plt.xticks(rotation=0)
 plt.tight_layout()
 plt.show()
 
-#ejercicoo moneda trampoza
+#ejercicoo moneda trampoza ------------------------------------
 
 lanzamientos = random.choices(
     ["Cara", "Sello"],
@@ -108,21 +101,59 @@ plt.title("Resultados de la moneda tramposa")
 plt.tight_layout()
 plt.show()
 
-
-#calenadario 2020
+"""
 import pandas as pd
 
-# Crear calendario del 2020 (todos los días)
+# =========================
+# crear calendario 2020
+# =========================
+
+# generar fechas
 fechas = pd.date_range(start="2020-01-01", end="2020-12-31")
 
-# Crear DataFrame
-df = pd.DataFrame({"Fecha": fechas})
+# crear dataframe
+df_calendario = pd.DataFrame({
+    "Date": fechas,
+    "Day_of_week": fechas.day_name(),
+    "Week_number": fechas.isocalendar().week,
+    "Month": fechas.month_name(),
+    "Quarter": fechas.quarter
+})
 
-# Extraer información
-df["Año"] = df["Fecha"].dt.year
-df["Mes"] = df["Fecha"].dt.month
-df["Día"] = df["Fecha"].dt.day
-df["Día_semana"] = df["Fecha"].dt.day_name()   # nombre del día
-df["Semana"] = df["Fecha"].dt.isocalendar().week
+# =========================
+# exportar a excel
+# =========================
 
-print(df.tail) 
+df_calendario.to_excel("Calendario_2020.xlsx", index=False)
+
+print("excel generado correctamente")
+
+# =========================
+# exportar a word
+# =========================
+
+from docx import Document
+
+# crear documento
+doc = Document()
+doc.add_heading("Calendario 2020", level=1)
+
+# crear tabla
+tabla = doc.add_table(rows=1, cols=len(df_calendario.columns))
+tabla.style = "Table Grid"
+
+# encabezados
+hdr_cells = tabla.rows[0].cells
+for i, col in enumerate(df_calendario.columns):
+    hdr_cells[i].text = col
+
+# datos
+for _, row in df_calendario.iterrows():
+    fila = tabla.add_row().cells
+    for i, col in enumerate(df_calendario.columns):
+        fila[i].text = str(row[col])
+
+# guardar word
+doc.save("Calendario_2020.docx")
+
+print("word generado correctamente")
