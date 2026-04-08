@@ -1,0 +1,31 @@
+id_producto,sku,nombre_producto,stock_actual,categoria,precio_unitario,stock_minimo,ventas_ult_30d,sede,estado_producto,fecha_ultimo_ingreso,responsable
+P001,LAP-01,Laptop Dell Inspiron,12,Tecnología,2599.9,18,12,Lima,Activo,2025-11-05,Carlos Rojas
+P002,MON-02,Monitor Samsung 24,8,Tecnología,899.5,10,3,Arequipa,Activo,2025-10-20,Lucía Paredes
+P003,TEC-03,Teclado Mecánico Redragon,25,Tecnología,189.9,40,5,Cusco,Activo,2025-09-15,Jorge Medina
+P004,SIL-04,Silla Ergonómica Pro,4,Muebles,1299.0,6,2,Lima,Activo,2025-08-01,María Quispe
+P005,IMP-05,Impresora Epson L3250,6,Oficina,799.0,15,7,Trujillo,Activo,2025-07-10,Pedro Salas
+P006,SSD-06,Disco SSD 1TB Kingston,30,Tecnología,349.9,35,20,Piura,Activo,2025-12-01,Andrea León
+P007,CEL-07,Smartphone Galaxy A55,0,Tecnología,1599.9,12,14,Lima,Activo,2026-01-10,Diego Núñez
+P008,CAM-08,Cámara Logitech C920,14,Tecnología,-250.0,18,4,CUSCO,Activo,2025-11-22,Mónica Díaz
+P009,MES-09,Mesa de Reunión 8P,2,Muebles,1890.0,4,1,Arequipa,Inactivo,2025-06-25,Rosa Valdez
+P010,AUD-10,Audífonos JBL Tune,50,Tecnología,220.0,60,0,Lima,Activo,fecha_errada,Luis Torres
+P011,USB-11,Memoria USB 64GB,100,Tecnología,45.9,80,50,Piura,Activo,2025-11-30,Carmen Ruiz
+P012,PAP-12,Paquete Papel A4,200,Oficina,18.5,120,30,Trujillo,Activo,2025-04-17,Elena Gómez
+P013,MIC-13,Microfono HyperX,5,Tecnología,599.9,9,12,Lima,Activo,2025-10-05,Carlos Rojas
+P014,ROU-14,Router TP-Link AX1500,17,Tecnología,310.0,20,6,Arequipa,Activo,2025-12-15,Lucía Paredes
+P015,LIB-15,Librero Modular,3,Muebles,750.0,5,2,Piura,Activo,2025-07-28,Jorge Medina
+P016,PRO-16,Proyector Epson X49,1,Oficina,2100.0,2,1,Cusco,Activo,2025-05-14,María Quispe
+P017,LAP-17,Laptop Lenovo ThinkPad,7,Tecnología,4200.0,9,8,Lima,Activo,2025-09-09,Pedro Salas
+P018,SIL-18,Silla Visita Básica,60,Muebles,180.0,40,10,Trujillo,Activo,2025-08-30,Andrea León
+P019,TAB-19,Tablet Samsung S9 FE,9,Tecnología,2100.0,7,7,Lima,Activo,2025-10-18,Diego Núñez
+P020,MON-20,Monitor LG UltraWide,4,Tecnología,1450.0,6,10,Piura,Activo,2025-12-22,Mónica Díaz
+P021,MON-20,Monitor LG UltraWide,4,Tecnología,1450.0,6,10,Piura,Activo,2025-12-22,Mónica Díaz
+P022,SOF-21,Sofá Recepción,2,Muebles,2500.0,2,3,Lima,Activo,2025-03-12,Rosa Valdez
+P023,IMP-22,Impresora Laser HP,11,Oficina,1250.0,14,18,Arequipa,Activo,2025-11-01,Luis Torres
+P024,SSD-23,Disco SSD 512GB WD,16,Tecnología,220.0,25,3,Trujillo,Activo,2025-09-26,Carmen Ruiz
+P025,CAM-24,Camara Seguridad Ezviz,20,Tecnología,410.0,30,9,Lima,Activo,2025-10-02,Elena Gómez
+P026,ARC-25,Archivador Metálico,7,Oficina,680.0,8,2,Cusco,Activo,2025-06-16,Carlos Rojas
+P027,MIC-26,Mouse Inalámbrico Logitech,45,Tecnología,95.0,55,5,Piura,Activo,2025-08-19,Lucía Paredes
+P028,CEL-27,Smartphone Redmi Note,13,Tecnología,980.0,15,16,Lima,Activo,2025-11-12,Jorge Medina
+P029,MES-28,Mesa Escritorio,9,Muebles,540.0,11,0,Arequipa,Activo,2025-07-07,María Quispe
+P030,PIZ-29,Pizarra Acrílica,10,Oficina,260.0,16,4,Trujillo,Activo,2025-05-20,Pedro Salas
